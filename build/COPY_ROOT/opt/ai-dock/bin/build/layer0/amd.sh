@@ -9,7 +9,9 @@ main() {
 
 install_comfyui() {
     micromamba run -n comfyui ${PIP_INSTALL} \
-            torch torchvision torchaudio "${PYTORCH_TAG}"
+            --no-cache-dir \
+            --index-url https://download.pytorch.org/whl/rocm${ROCM_VERSION} \
+            torch==${PYTORCH_VERSION} torchvision torchaudio
     /opt/ai-dock/bin/update-comfyui.sh
 }
 
