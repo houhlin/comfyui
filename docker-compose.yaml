@@ -13,31 +13,31 @@ services:
     
     security_opt:
       # For Rclone mount
-      - apparmor:unconfined
+      # - apparmor:unconfined
       # For AMD GPU
-      #- seccomp:unconfined
+      - seccomp:unconfined
     
-    cap_add:
+    #cap_add:
       # For Rclone mount
-      - SYS_ADMIN
+      #- SYS_ADMIN
     
     devices:
       # For Rclone mount
-      - "/dev/fuse:/dev/fuse"
+      #- "/dev/fuse:/dev/fuse"
       # For AMD GPU
-      #- "/dev/kfd:/dev/kfd"
-      #- "/dev/dri:/dev/dri"
+      - "/dev/kfd:/dev/kfd"
+      - "/dev/dri:/dev/dri"
       
     # For AMD GPU
-    #group_add:
-    #  - video
+    group_add:
+      - video
     #  - render
     
     volumes:
       # For Rclone mount
-      - /etc/passwd:/etc/passwd:ro
-      - /etc/group:/etc/group:ro
-      - ./config/rclone:/etc/rclone
+      #- /etc/passwd:/etc/passwd:ro
+      #- /etc/group:/etc/group:ro
+      #- ./config/rclone:/etc/rclone
       # Workspace
       - ./workspace:${WORKSPACE:-/workspace/}:rshared
       # Will echo to root-owned authorized_keys file;
@@ -53,7 +53,7 @@ services:
         # Jupyter server
         - ${JUPYTER_PORT_HOST:-8888}:${JUPYTER_PORT:-8888}
         # Rclone webserver for interactive configuration
-        - ${RCLONE_PORT_HOST:-53682}:53682
+        #- ${RCLONE_PORT_HOST:-53682}:53682
    
     environment:
         # Don't enclose values in quotes
