@@ -5,6 +5,7 @@ set -e
 
 bash -c /opt/ai-dock/bin/build/layer0/common.sh
 echo $XPU_TARGET
+echo $PYTORCH_TAG
 if [[ "$XPU_TARGET" == "NVIDIA_GPU" ]]; then
     bash -c /opt/ai-dock/bin/build/layer0/nvidia.sh
 elif [[ "$XPU_TARGET" == "AMD_GPU" ]]; then
