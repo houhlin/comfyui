@@ -5,11 +5,11 @@ services:
     build:
       context: ./build
       args:
-        IMAGE_BASE: ${IMAGE_BASE:-ghcr.io/ai-dock/jupyter-pytorch:latest-rocm}
+        IMAGE_BASE: ghcr.io/ai-dock/jupyter-pytorch: latest-rocm
       tags:
-        - "ghcr.io/ai-dock/comfyui:${IMAGE_TAG:-latest-rocm-jupyter}"
+        - "ghcr.io/ai-dock/comfyui: latest-rocm-jupyter"
         
-    image: ghcr.io/ai-dock/comfyui:${IMAGE_TAG:-latest-rocm-jupyter}
+    image: ghcr.io/ai-dock/comfyui: latest-rocm-jupyter
     
     security_opt:
       # For Rclone mount
