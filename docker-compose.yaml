@@ -31,7 +31,7 @@ services:
     # For AMD GPU
     group_add:
       - video
-      - render
+     # - render
     
     volumes:
       # For Rclone mount
