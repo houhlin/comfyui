@@ -18,6 +18,7 @@ COPY ./COPY_ROOT/ /
 # Don't put anything heavy in here - We can use multi-stage building above if necessary.
 
 ARG IMAGE_BASE
+ARG PYTORCH_TAG
 RUN bash -c /opt/ai-dock/bin/build/layer0/init.sh
 
 ENV MAMBA_DEFAULT_ENV=comfyui
