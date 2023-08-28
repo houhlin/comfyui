@@ -8,6 +8,8 @@ main() {
 }
 
 install_comfyui() {
+    micromamba run -n comfyui ${PIP_INSTALL} \
+            torch torchvision torchaudio "${PYTORCH_TAG}"
     /opt/ai-dock/bin/update-comfyui.sh
 }
 
