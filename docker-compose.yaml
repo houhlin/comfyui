@@ -5,11 +5,11 @@ services:
     build:
       context: ./build
       args:
-        IMAGE_BASE: ${IMAGE_BASE:-ghcr.io/ai-dock/jupyter-pytorch:latest-cuda}
+        IMAGE_BASE: ${IMAGE_BASE:-ghcr.io/ai-dock/jupyter-pytorch:latest-rocm}
       tags:
-        - "ghcr.io/ai-dock/comfyui:${IMAGE_TAG:-latest-jupyter}"
+        - "ghcr.io/ai-dock/comfyui:${IMAGE_TAG:-latest-rocm-jupyter}"
         
-    image: ghcr.io/ai-dock/comfyui:${IMAGE_TAG:-latest-jupyter}
+    image: ghcr.io/ai-dock/comfyui:${IMAGE_TAG:-latest-rocm-jupyter}
     
     security_opt:
       # For Rclone mount
@@ -31,7 +31,7 @@ services:
     # For AMD GPU
     group_add:
       - video
-    #  - render
+      - render
     
     volumes:
       # For Rclone mount
