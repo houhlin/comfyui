@@ -6,7 +6,7 @@ services:
       context: ./build
       args:
         IMAGE_BASE: "ghcr.io/ai-dock/jupyter-pytorch:latest-rocm"
-        PYTORCH_TAG: " --index-url https://download.pytorch.org/whl/rocm5.4.2"
+        PYTORCH_TAG: " --index-url https://download.pytorch.org/whl/rocm5.6"
       tags:
         - "ghcr.io/ai-dock/comfyui:latest-rocm-jupyter"
         
