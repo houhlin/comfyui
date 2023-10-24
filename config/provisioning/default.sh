@@ -9,8 +9,8 @@ function download() {
 }
 
 ## Set paths
-nodes_dir=/opt/comfyui/ComfyUI/custom_nodes
-models_dir=/opt/comfyui/ComfyUI/models
+nodes_dir=/opt/ComfyUI/custom_nodes
+models_dir=/opt/ComfyUI/models
 checkpoints_dir=${models_dir}/checkpoints
 vae_dir=${models_dir}/vae
 controlnet_dir=${models_dir}/controlnet
