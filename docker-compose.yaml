@@ -41,7 +41,7 @@ services:
       #- /etc/group:/etc/group:ro
       #- ./config/rclone:/etc/rclone
       # Workspace
-      - ${WORKSPACE_o:-./workspace}:${WORKSPACE:-/workspace/}
+      - ${WORKSPACE_o:-./workspace}:${WORKSPACE:-/workspace/}:rshared
       - ${MODELS_o:-./models}:${MODELS:-/opt/models}
       # Will echo to root-owned authorized_keys file;
       # Avoids changing local file owner
