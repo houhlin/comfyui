@@ -41,7 +41,7 @@ services:
       #- /etc/group:/etc/group:ro
       #- ./config/rclone:/etc/rclone
       # Workspace
-      - ${WORKSPACE_o:-./workspace}:${WORKSPACE:-/workspace/}:rshared
+      - ${WORKSPACE_o:-./workspace1}:${WORKSPACE:-/workspace2/}:rshared
       - ${MODELS_o:-./models}:${MODELS:-/opt/models}
       # Will echo to root-owned authorized_keys file;
       # Avoids changing local file owner
@@ -66,7 +66,7 @@ services:
         - JUPYTER_MODE=${JUPYTER_MODE:-lab}
         # Allows running true SSH alongside provider proxy SSH
         - SSH_PORT=${SSH_PORT:-22}
-        - WORKSPACE=${WORKSPACE:-/workspace}
+        - WORKSPACE=${WORKSPACE:-/workspace3}
         - WORKSPACE_SYNC=${WORKSPACE_SYNC}
         - CF_TUNNEL_TOKEN=${CF_TUNNEL_TOKEN:-}
         - CF_QUICK_TUNNELS=${CF_QUICK_TUNNELS:-true}
